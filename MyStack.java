@@ -26,15 +26,16 @@ import java.util.List;
              throw new EmptyStackException();
          }
 
-         return null;
+         return list.get(list.size() - 1);
      }
 
      public T pop() {
          if (isEmpty()) {
              throw new EmptyStackException();
          }
-
-         return null;
+         T p = list.get(list.size() - 1);
+         list.remove(p);
+         return p;
      }
 
      public T push(T element) {
@@ -45,7 +46,8 @@ import java.util.List;
 
      public int search(T element) {
          // ...
-         return -1;
+         int index = list.indexOf(element);
+         return index;
      }
  }
 
