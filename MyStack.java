@@ -11,42 +11,39 @@ import java.util.List;
          super(arrClass);
      }
 
-     private List<T> list = new ArrayList<T>();
-     
-     //did not work
-     //MyArrayList<T> myFirstArr = new MyArrayList<T>(T[].class);
+     //private List<T> list = new ArrayList<T>();
      
      public boolean empty() {
         
-         return list.isEmpty();
+         return super.isEmpty();
      }
 
      public T peek() {
-         if (isEmpty()) {
+         if (super.isEmpty()) {
              throw new EmptyStackException();
          }
 
-         return list.get(list.size() - 1);
+         return super.get(super.size() - 1);
      }
 
      public T pop() {
-         if (isEmpty()) {
+         if (super.isEmpty()) {
              throw new EmptyStackException();
          }
-         T p = list.get(list.size() - 1);
-         list.remove(p);
+         T p = super.get(super.size() - 1);
+         super.remove(p);
          return p;
      }
 
      public T push(T element) {
          //
-         list.add(element);
+         super.add(element);
          return element;
      }
 
      public int search(T element) {
          // ...
-         int index = list.indexOf(element);
+         int index = super.indexOf(element);
          return index;
      }
  }
